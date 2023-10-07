@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Trivia</title>
+</head>
+
+<body>
+    <div class="contenedor">
+        <div class="puntos">
+            Puntos: <span id="puntos">0</span>
+        </div>
+        <div class="encabezado">
+            <div class="categoria" id="categoria">
+                categoria
+            </div>
+            <div class="pregunta" id="pregunta">
+                pregunta
+            </div>
+            <img src="" class="imagen" id="imagen">
+        </div>
+        <div class="btn" id="btn1" onclick="oprimir_btn(0)">opcion1</div>
+        <div class="btn" id="btn2" onclick="oprimir_btn(1)">opcion2</div>
+        <div class="btn" id="btn3" onclick="oprimir_btn(2)">opcion3</div>
+        <div class="btn" id="btn4" onclick="oprimir_btn(3)">opcion4</div>
+    </div>
+
+    <script>
+
+        let base_preguntas = readText("base-preguntas.json");
+        let interprete_bp = JSON.parse(base_preguntas);
+        let pregunta;
+        let posibles_respuestas;
+        let btn_correspondiente = [
+            select_id("btn1"),
+            select_id("btn2"),
+            select_id("btn3"),
+            select_id("btn4")
+        ];
+        let contador_puntos = 0;
+        let juegoTerminado = false; // Variable para controlar si el juego ha terminado
+        let preguntaActual = 0;
+
+        escogerPregunta(preguntaActual);
+
+
+        escogerPreguntaAleatoria();
+
+        function escogerPreguntaAleatoria() {
+            escogerPregunta(Math.floor(Math.random() * interprete_bp.length))
+        }
+
+        function escogerPregunta(n) {
+            pregunta = interprete_bp[n]
+            //vamos a seleccionar con el id el objeto que se llama categoria
+            select_id("categoria").innerHTML = pregunta.categoria
+            select_id("pregunta").innerHTML = pregunta.pregunta
+            select_id("imagen").setAttribute("src", pregunta.imagen)
+            style("imagen").objectFit = pregunta.objectFit;
+            desordenarRespuestas(pregunta)
+            if (pregunta.imagen) {
+                style("imagen").height = "250px"
+                style("imagen").width = "500px"
+            } else {
+                style("imagen").height = "0px"
+                style("imagen").width = "0px"
+            }
+        }
+
+        let botones = [
+            select_id(btn1),
+            select_id(btn2),
+            select_id(btn3),
+            select_id(btn4)
+        ]
+
+
+        function desordenarRespuestas(pregunta) {
+            posibles_respuestas = [
+                pregunta.respuesta,
+                pregunta.incorrecta1,
+                pregunta.incorrecta2,
+                pregunta.incorrecta3,
+            ]
+            posibles_respuestas.sort(() => Math.random() - 0.5)
+            select_id("btn1").innerHTML = posibles_respuestas[0]
+            select_id("btn2").innerHTML = posibles_respuestas[1]
+            select_id("btn3").innerHTML = posibles_respuestas[2]
+            select_id("btn4").innerHTML = posibles_respuestas[3]
+        }
+
+        function oprimir_btn(i) {
+            if (juegoTerminado) {
+                return; // Si el juego ya ha terminado, no hacer nada
+            }
+            else if (posibles_respuestas[i] == pregunta.respuesta) {
+                btn_correspondiente[i].style.background = "lightgreen";
+                contador_puntos++;
+                actualizarPuntos();
+            } else {
+                btn_correspondiente[i].style.background = "crimson";
+                juegoTerminado = true;
+                alert("¡Respuesta incorrecta! El juego ha terminado. Puntuación: " + contador_puntos);
+                reiniciar();
+                return; // Sal de la función para evitar que se sigan procesando más clics
+            }
+            setTimeout(() => {
+                reiniciar()
+            }, 2000);
+        }
+
+        
+        function reiniciar() {
+            if (juegoTerminado) {
+                return; // Si el juego ha terminado, no reiniciar
+            }
+
+            for (const btn of btn_correspondiente) {
+                btn.style.background = "white"
+            }
+            // Avanza a la siguiente pregunta
+            preguntaActual++;
+            if (preguntaActual < interprete_bp.length) {
+                escogerPregunta(preguntaActual);
+            } else {
+                // Si no quedan más preguntas, muestra un mensaje de juego completado
+                alert("¡Has completado el juego! Puntuación final: " + contador_puntos);
+                juegoTerminado = true;
+            }
+        }
+    
+        function actualizarPuntos() {
+            document.getElementById("puntos").textContent = contador_puntos;
+        }
+
+        //seleccionar un objeto según si id
+        function select_id(id) {
+            return document.getElementById(id);
+        }
+
+        //obtener el css segun el id
+        function style(id) {
+            return select_id(id).style;
+        }
+
+        //para leer texto en una ruta local
+        function readText(ruta_local) {
+            var texto = null;
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open("GET", ruta_local, false);
+            xmlhttp.send();
+            if (xmlhttp.status == 200) {
+                texto = xmlhttp.responseText;
+            }
+            return texto;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

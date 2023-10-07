@@ -1,0 +1,102 @@
+[
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién pintó la mona lisa?",
+        "respuesta": "Leonardo Da Vinci",
+        "incorrecta1": "Piccaso",
+        "incorrecta2": "Miguel Angel",
+        "incorrecta3": "Monet",
+        "imagen": "https://cloudfront-us-east-1.images.arcpublishing.com/copesa/7ARBKZBF3JDNLCJOS2BJEGT6WQ.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Historia y Geografía",
+        "pregunta": "¿Cuál es el río más largo del mundo?",
+        "respuesta": "El río Amazonas",
+        "incorrecta1": "El río Nilo",
+        "incorrecta2": "El río Misisipi",
+        "incorrecta3": "El río Yangtsé",
+        "imagen": "https://ingeoexpert.com/wp-content/uploads/2018/08/Amazonas.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Historia y Geografía",
+        "pregunta": "¿Quién fue el primer presidente de los Estados Unidos?",
+        "respuesta": "George Washington",
+        "incorrecta1": "Abraham Lincoln",
+        "incorrecta2": "Thomas Jefferson",
+        "incorrecta3": "John F. Kennedy",
+        "imagen": "https://static.independentespanol.com/2021/06/14/11/newFile-17.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Ciencia",
+        "pregunta": "¿Cuál es el planeta más grande del sistema solar?",
+        "respuesta": "Júpiter",
+        "incorrecta1": "Saturno",
+        "incorrecta2": "Marte",
+        "incorrecta3": "Venus",
+        "imagen": "https://tuguiadeaprendizaje.co/wp-content/uploads/2022/04/El-sistema-solar.png",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Ciencia",
+        "pregunta": "¿Cuál es el elemento químico más abundante en el universo?",
+        "respuesta": "Hidrógeno",
+        "incorrecta1": "Oxígeno",
+        "incorrecta2": "Helio",
+        "incorrecta3": "Carbono",
+        "imagen": "https://humanidades.com/wp-content/uploads/2018/08/elementos-quimicos-e1577759210182.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Ciencia",
+        "pregunta": "¿Cuál es el hueso más largo del cuerpo humano?",
+        "respuesta": "Fémur",
+        "incorrecta1": "Húmero",
+        "incorrecta2": "Tibia",
+        "incorrecta3": "Radio",
+        "imagen": "https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,q_60,w_645/cea333079ef95cb4d706e02f77b41005.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Música",
+        "pregunta": "¿Qué banda británica es conocida como: Los Cuatro Fabulosos?",
+        "respuesta": "The Beatles",
+        "incorrecta1": "The Rolling Stones",
+        "incorrecta2": "Led Zeppelin",
+        "incorrecta3": "Queen",
+        "imagen": "https://static.independentespanol.com/s3fs-public/thumbnails/image/2019/09/17/17/the-beatles.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿De que país era el artista Diego Rivera?",
+        "respuesta": "Mexico",
+        "incorrecta1": "Canada",
+        "incorrecta2": "Francia",
+        "incorrecta3": "Colombia",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Diego_Rivera_-_Google_Art_Project_%28cropped%29.jpg/330px-Diego_Rivera_-_Google_Art_Project_%28cropped%29.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Arte y Literatura",
+        "pregunta": "¿Quién derrotó a Goliat?",
+        "respuesta": "David",
+        "incorrecta1": "Salomón",
+        "incorrecta2": "Sansón",
+        "incorrecta3": "Xena",
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Tycjan_David_i_Goliat.jpg/480px-Tycjan_David_i_Goliat.jpg",
+        "object_fit": "cover"
+    },
+    {
+        "categoria": "Música",
+        "pregunta": "¿Quién fue el famoso cantante y guitarrista de la banda Queen?",
+        "respuesta": "Freddie Mercury",
+        "incorrecta1": "David Bowie",
+        "incorrecta2": "Elton John",
+        "incorrecta3": "Mick Jagger",
+        "imagen": "https://historia-biografia.com/wp-content/uploads/2018/11/queen.webp",
+        "object_fit": "cover"
+    }
+]
